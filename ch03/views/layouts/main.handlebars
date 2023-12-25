@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meadowlark Travel</title>
+    <title> {{title}} </title>
+
 </head>
 <body>
     <header>
-        <img src="/img/logo.png" alt="Meadowlark Travel Logo">
+        <h1> {{title}} </h1>
     </header>
-    {{{body}}}
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </nav>
+    <div class="container">
+        {{{body}}}
+    </div>
+    <footer>
+        &copy; 2023 Your Company
+    </footer>
 </body>
 </html>

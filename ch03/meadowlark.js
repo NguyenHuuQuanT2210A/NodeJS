@@ -1,6 +1,9 @@
 const express = require('express')
 const expressHandlebars = require('express-handlebars').engine;
 const fortune = require('./lib/fortune.js')
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
+const catNames = require('cat-names')
 const app = express()
 
 app.engine('handlebars', expressHandlebars({
@@ -15,7 +18,7 @@ app.get('/', (req, res) => res.render('home'))
 
 
 app.get('/about', (req, res) => {
-    res.render('about',{ fortune: fortune.getFortune() })
+    res.render('about',{ fortune: fortune.getFortune() , title: 'about'})
 })
 
 //custom 404 page
