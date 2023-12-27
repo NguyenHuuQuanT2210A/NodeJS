@@ -10,14 +10,14 @@ const tours = [
     { id: 1, name: 'Oregon Coast', price: 149.95 },
 ]
 
-app.get('/api/tours', (req, res) => {
+app.get('/api/tours', (req, res) => 
     res.json(tours)
-})
-app.get('/api/tour:id', (req, res) => {
+)
+app.put('/api/tour/:id', (req, res) => {
     const p = tours.find(p => p.id === parseInt(req.params.id))
     if(!p) return res.status(410).json({ error: 'No such tour exists' })
     if(req.body.name) p.name = req.body.name
-    if(req.body.price) p.email = req.body.price
+    if(req.body.price) p.price = req.body.price
     res.json({ success: true })
 })
 
